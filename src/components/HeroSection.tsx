@@ -4,12 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Music, ArrowDown } from 'lucide-react';
 
-export default function HeroSection() {
+export default function HeroSection({ id }: { id?: string }) {
     const title = "Live Dashboard";
     const letters = Array.from(title);
 
     return (
-        <section className="sticky top-0 h-screen flex flex-col items-center justify-center z-0">
+        <section id={id} className="sticky top-0 h-screen flex flex-col items-center justify-center z-0">
             <motion.div
                 className="text-center z-10"
             >

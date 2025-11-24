@@ -81,11 +81,11 @@ export default function Dashboard({ data, revenueTrend, streamingTrend, callerTu
             <Navbar />
 
             <main className="relative z-10">
-                <HeroSection />
+                <HeroSection id="home" />
 
-                <CountryMapSection />
 
-                <ChartSection title="Month Wise Revenue Trend" subtitle="Revenue vs Activity Period">
+
+                <ChartSection id="revenue" title="Month Wise Revenue Trend" subtitle="Revenue vs Activity Period">
                     <div className="h-[50vh] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={revenueTrend} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -101,7 +101,7 @@ export default function Dashboard({ data, revenueTrend, streamingTrend, callerTu
                     </div>
                 </ChartSection>
 
-                <ChartSection title="DSP Reports" subtitle="Revenue vs Store Name">
+                <ChartSection id="dsp" title="DSP Reports" subtitle="Revenue vs Store Name">
                     <div className="h-[50vh] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={dspData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -117,7 +117,7 @@ export default function Dashboard({ data, revenueTrend, streamingTrend, callerTu
                     </div>
                 </ChartSection>
 
-                <ChartSection title="Streaming Trend" subtitle="Quantity and Revenue">
+                <ChartSection id="streaming" title="Streaming Trend" subtitle="Quantity and Revenue">
                     <div className="h-[60vh] w-full flex justify-center">
                         <ResponsiveContainer width="100%" height="100%">
                             <PieChart>
@@ -143,7 +143,7 @@ export default function Dashboard({ data, revenueTrend, streamingTrend, callerTu
                     </div>
                 </ChartSection>
 
-                <ChartSection title="Caller Tune Overview" subtitle="JioTunes, airtel and VI Callertune">
+                <ChartSection id="caller-tune" title="Caller Tune Overview" subtitle="JioTunes, airtel and VI Callertune">
                     <div className="flex justify-center gap-8 mb-8 text-sm font-medium">
                         <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-[#FBBC04]"></div> VI Callertune</div>
                         <div className="flex items-center gap-2"><div className="w-3 h-3 rounded-full bg-[#EA4335]"></div> airtel</div>
@@ -166,12 +166,14 @@ export default function Dashboard({ data, revenueTrend, streamingTrend, callerTu
                     </div>
                 </ChartSection>
 
-                <TableSection title="Artist" data={artistData} columns={['Artist', 'Revenue', 'Total']} />
-                <TableSection title="Album" data={albumData} columns={['Release', 'Artist', 'Project Code', 'Revenue', 'Total']} />
+                <CountryMapSection id="country-map" />
+
+                <TableSection id="artist" title="Artist" data={artistData} columns={['Artist', 'Revenue', 'Total']} />
+                <TableSection id="album" title="Album" data={albumData} columns={['Release', 'Artist', 'Project Code', 'Revenue', 'Total']} />
 
                 <BannerSection />
 
-                <FooterSection />
+                <FooterSection id="contact" />
 
             </main>
         </div>

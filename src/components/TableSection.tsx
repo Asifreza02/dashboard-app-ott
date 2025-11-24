@@ -8,9 +8,10 @@ interface TableSectionProps {
     title: string;
     data: TableData[];
     columns: string[];
+    id?: string;
 }
 
-export default function TableSection({ title, data, columns }: TableSectionProps) {
+export default function TableSection({ title, data, columns, id }: TableSectionProps) {
     const [page, setPage] = useState(1);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const [search, setSearch] = useState('');
@@ -23,7 +24,7 @@ export default function TableSection({ title, data, columns }: TableSectionProps
     const paginatedData = filteredData.slice((page - 1) * rowsPerPage, page * rowsPerPage);
 
     return (
-        <section className="sticky top-0 min-h-screen flex flex-col items-center justify-center z-10 pointer-events-none py-20">
+        <section id={id} className="sticky top-0 min-h-screen flex flex-col items-center justify-center z-10 pointer-events-none py-20">
             <div className="w-full max-w-6xl px-4 pointer-events-auto">
                 <div className="bg-white/80 backdrop-blur-xl p-8 rounded-[2rem] shadow-2xl border border-white/50">
                     <div className="text-center mb-8">

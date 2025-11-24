@@ -7,9 +7,10 @@ interface ChartSectionProps {
     title: string;
     subtitle: string;
     children: React.ReactNode;
+    id?: string;
 }
 
-export default function ChartSection({ title, subtitle, children }: ChartSectionProps) {
+export default function ChartSection({ title, subtitle, children, id }: ChartSectionProps) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -21,7 +22,7 @@ export default function ChartSection({ title, subtitle, children }: ChartSection
     const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
     return (
-        <section ref={ref} className="sticky top-0 h-screen flex flex-col items-center justify-center z-10 pointer-events-none">
+        <section id={id} ref={ref} className="sticky top-0 h-screen flex flex-col items-center justify-center z-10 pointer-events-none">
             <motion.div
                 style={{ opacity, scale, y }}
                 className="w-full max-w-6xl px-4 pointer-events-auto"

@@ -3,9 +3,9 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 
-export default function FooterSection() {
+export default function FooterSection({ id }: { id?: string }) {
     return (
-        <footer className="bg-white py-12 px-8 border-t border-slate-200 z-20 relative">
+        <footer id={id} className="bg-white py-12 px-8 border-t border-slate-200 z-20 relative">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
                 <div className="flex flex-col gap-4 text-sm text-slate-600">
                     <div className="flex gap-4">
