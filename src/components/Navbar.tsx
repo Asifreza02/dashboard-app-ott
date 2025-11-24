@@ -1,0 +1,58 @@
+'use client';
+
+import React, { useState } from 'react';
+import { Menu, ChevronDown } from 'lucide-react';
+
+export default function Navbar() {
+    const [isReportsOpen, setIsReportsOpen] = useState(false);
+
+    return (
+        <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 bg-white/10 backdrop-blur-md border-b border-white/20">
+            <div className="flex items-center gap-2">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-blue-500 flex items-center justify-center text-white font-bold shadow-lg">
+                    OTT
+                </div>
+                <span className="font-bold text-slate-800 text-sm tracking-wide">OTT Solutions</span>
+            </div>
+
+            <div className="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#" className="text-orange-500 font-semibold">Home</a>
+
+                <div className="relative group">
+                    <div
+                        className="flex items-center gap-1 cursor-pointer hover:text-orange-500 transition-colors"
+                        onMouseEnter={() => setIsReportsOpen(true)}
+                        onMouseLeave={() => setIsReportsOpen(false)}
+                    >
+                        Reports <ChevronDown className="w-4 h-4" />
+                    </div>
+                    {isReportsOpen && (
+                        <div
+                            className="absolute top-full left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden"
+                            onMouseEnter={() => setIsReportsOpen(true)}
+                            onMouseLeave={() => setIsReportsOpen(false)}
+                        >
+                            <div className="py-2">
+                                <a href="#" className="block px-4 py-2 hover:bg-orange-50 text-slate-700">DSP</a>
+                                <a href="#" className="block px-4 py-2 hover:bg-orange-50 text-slate-700">Caller Tune</a>
+                                <a href="#" className="block px-4 py-2 hover:bg-orange-50 text-slate-700">Artist</a>
+                                <a href="#" className="block px-4 py-2 hover:bg-orange-50 text-slate-700">Album</a>
+                                <a href="#" className="block px-4 py-2 hover:bg-orange-50 text-slate-700">Track</a>
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                <a href="#" className="hover:text-orange-500 transition-colors">Repertoire</a>
+                <a href="#" className="hover:text-orange-500 transition-colors">New Songs Release</a>
+                <a href="#" className="hover:text-orange-500 transition-colors">Resource</a>
+                <a href="#" className="hover:text-orange-500 transition-colors">Contact</a>
+                <div className="flex items-center gap-1 cursor-pointer hover:text-orange-500 transition-colors">Account <ChevronDown className="w-4 h-4" /></div>
+            </div>
+
+            <div className="md:hidden">
+                <Menu className="w-6 h-6 text-slate-700" />
+            </div>
+        </nav>
+    )
+}
