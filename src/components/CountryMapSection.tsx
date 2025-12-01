@@ -29,8 +29,8 @@ export default function CountryMapSection({ id }: { id?: string }) {
     return (
         <section id={id} className="relative w-full py-20 flex flex-col items-center justify-center z-10">
             <div className="w-full max-w-6xl px-4">
-                <div className="bg-white/40 backdrop-blur-xl p-8 rounded-[3rem] shadow-2xl border border-white/50">
-                    <h2 className="text-4xl font-bold text-center text-slate-800 mb-8">Country Trend</h2>
+                <div className="bg-white/40 backdrop-blur-xl p-4 md:p-8 rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-white/50">
+                    <h2 className="text-2xl md:text-4xl font-bold text-center text-slate-800 mb-8">Country Trend</h2>
                     <div className="w-full h-[60vh] flex items-center justify-center bg-white/50 rounded-2xl overflow-hidden relative">
                         <ComposableMap projection="geoMercator" projectionConfig={{ scale: 140 }}>
                             <ZoomableGroup center={[0, 20]}>

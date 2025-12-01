@@ -27,10 +27,10 @@ export default function ChartSection({ title, subtitle, children, id }: ChartSec
                 style={{ opacity, scale, y }}
                 className="w-full max-w-6xl px-4 pointer-events-auto"
             >
-                <div className="bg-white/40 backdrop-blur-xl p-8 rounded-[3rem] shadow-2xl border border-white/50">
+                <div className="bg-white/40 backdrop-blur-xl p-4 md:p-8 rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-white/50">
                     <div className="text-center mb-8">
-                        <h2 className="text-4xl font-bold text-slate-800 mb-2">{title}</h2>
-                        <p className="text-xl text-slate-500 font-light">{subtitle}</p>
+                        <h2 className="text-2xl md:text-4xl font-bold text-slate-800 mb-2">{title}</h2>
+                        <p className="text-sm md:text-xl text-slate-500 font-light">{subtitle}</p>
                     </div>
                     {children}
                 </div>

@@ -13,7 +13,7 @@ export default function HeroSection({ id }: { id?: string }) {
             <motion.div
                 className="text-center z-10"
             >
-                <h1 className="text-6xl md:text-9xl font-light mb-12 text-slate-900 tracking-tighter flex overflow-hidden">
+                <h1 className="text-4xl md:text-9xl font-light mb-12 text-slate-900 tracking-tighter flex overflow-hidden">
                     {letters.map((letter, index) => (
                         <motion.span
                             key={index}

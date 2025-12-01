@@ -127,7 +127,7 @@ export default function Dashboard({ data, revenueTrend, streamingTrend, callerTu
                                     cy="50%"
                                     labelLine={true}
                                     label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(1)}%`}
-                                    outerRadius={220}
+                                    outerRadius="70%"
                                     fill="#8884d8"
                                     dataKey="value"
                                 >

@@ -26,13 +26,13 @@ export default function TableSection({ title, data, columns, id }: TableSectionP
     return (
         <section id={id} className="sticky top-0 min-h-screen flex flex-col items-center justify-center z-10 pointer-events-none py-20">
             <div className="w-full max-w-6xl px-4 pointer-events-auto">
-                <div className="bg-white/80 backdrop-blur-xl p-8 rounded-[2rem] shadow-2xl border border-white/50">
+                <div className="bg-white/80 backdrop-blur-xl p-4 md:p-8 rounded-[2rem] shadow-2xl border border-white/50">
                     <div className="text-center mb-8">
-                        <h2 className="text-4xl font-bold text-slate-800 mb-2">{title}</h2>
+                        <h2 className="text-2xl md:text-4xl font-bold text-slate-800 mb-2">{title}</h2>
                         <div className="w-16 h-1 bg-slate-800 mx-auto mt-4"></div>
                     </div>
 
-                    <div className="flex justify-between items-center mb-6">
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
                         <div className="flex items-center gap-2 text-sm text-slate-600">
                             <select
                                 value={rowsPerPage}
